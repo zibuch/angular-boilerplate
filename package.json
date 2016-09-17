@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "parallelshell 'npm run build' 'npm run watch' 'npm test'",
+    "start": "npm run build && parallelshell 'npm run watch' 'npm test'",
     "test": "karma start karma.conf.js",
     "css:build": "node-sass --output-style compressed src/scss/index.scss | postcss --use autoprefixer >  www/css/application.min.css",
     "css:watch": "gacher -p 'src/scss/*.scss src/js/app/components/**/*.scss' -c 'npm run css:build'",
@@ -14,7 +14,7 @@
     "js:watch:libs": "gacher -p 'src/js/libs.js' -c 'npm run js:build:libs'",
     "js:watch": "parallelshell 'npm run js:watch:app' 'npm run js:watch:libs'",
     "angular:watch": "gacher -p 'src/js/**/*.html' -c 'npm run angular:template'",
-    "angular:template": "n-embed -m 'boilerplate-templates' -s js app/**/*.html | uglifyjs -o www/js/templates.min.js",
+    "angular:template": "n-embed -m 'boilerplate-templates' -s src/js app/**/*.html | uglifyjs -o www/js/templates.min.js",
     "browser:sync": "browser-sync start --server www/ --files 'www/**/*'",
     "img:watch": "gacher -p 'img/**/*' -c 'npm run img:build'",
     "img:build": "imagemin img/**/* --out-dir=www/img",
