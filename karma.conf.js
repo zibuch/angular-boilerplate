@@ -3,10 +3,10 @@ module.exports = function(config) {
         basePath: '',
         frameworks: ['jasmine'],
         files: [
-            'www/js/libs.min.js',
-            'www/js/templates.min.js',
+            'build/js/libs.min.js',
+            'build/js/templates.min.js',
             'node_modules/angular-mocks/angular-mocks.js',
-            'www/js/application.min.js',
+            'build/js/application.min.js',
             'src/js/app/**/*.spec.js'
         ],
         exclude: [],
