@@ -7,7 +7,7 @@ module.exports = function(config) {
             'www/js/templates.min.js',
             'node_modules/angular-mocks/angular-mocks.js',
             'www/js/application.min.js',
-            'js/app/**/*.spec.js'
+            'src/js/app/**/*.spec.js'
         ],
         exclude: [],
         preprocessors: {},
